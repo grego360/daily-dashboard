@@ -113,9 +113,9 @@ class WeatherConfig(BaseModel):
     """Weather configuration."""
 
     enabled: bool = True
-    location_name: str = "Berlin"
-    latitude: float = 52.52
-    longitude: float = 13.41
+    location_name: str = "London"
+    latitude: float = 51.5074
+    longitude: float = -0.1278
 
     @field_validator("latitude")
     @classmethod

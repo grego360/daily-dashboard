@@ -54,3 +54,7 @@ coverage.xml
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment variables (if used in future)
+.env
+.env.local

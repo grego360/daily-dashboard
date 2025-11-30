@@ -6,23 +6,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Daily Dashboard is a terminal-based dashboard (TUI) built with Python's Textual framework. It displays news feeds from RSS/JSON sources, weather information, saved links, and performs network scanning using scapy's ARP-based discovery. The app is designed as a daily glance tool with keyboard navigation.
 
+## Installation
+
+```bash
+# From PyPI (recommended)
+pip install daily-dashboard
+
+# From Homebrew
+brew tap grego360/tap
+brew install daily-dashboard
+
+# From source (development)
+git clone https://github.com/grego360/daily-dashboard.git
+cd daily-dashboard
+pip install -e ".[dev]"
+```
+
 ## Commands
 
 ```bash
-# Install dependencies (use virtual environment)
-pip install -r requirements.txt
-
 # Run the dashboard (requires sudo for network scanning)
-sudo python -m dashboard
+sudo daily-dashboard
 
 # Run without sudo (network scanning disabled)
-python -m dashboard
+daily-dashboard
 
 # Run with custom config file
-sudo python -m dashboard --config /path/to/config.json
+daily-dashboard --config /path/to/config.json
 
 # Run with verbose logging
-sudo python -m dashboard -v
+daily-dashboard -v
+
+# Show version
+daily-dashboard --version
+
+# Run as module (development)
+sudo python -m dashboard
 
 # Run tests
 pytest
@@ -110,8 +129,13 @@ App reads `config.json` with structure:
 - `feeds[]`: name, url (validated), type (rss/json), enabled, json_path (validated)
 - `links[]`: categories with name and links array (name, url, description)
 - `network`: scanner type, targets with CIDR ranges, expected hosts, `dns_timeout_seconds`, `arp_timeout_seconds`
-- `weather`: enabled, location_name, latitude, longitude
+- `weather`: enabled, location_name, latitude, longitude (default: London)
 - `settings`: user_name, refresh_interval_minutes, cache_ttl_minutes, log_level
+
+**Default configuration** (when no config.json exists):
+- 3 example feeds: Hacker News, BBC News, TechCrunch
+- Weather: London (51.5074, -0.1278)
+- No network targets (requires user configuration)
 
 ### Privacy
 These files contain personal data and are git-ignored:
@@ -136,3 +160,22 @@ These files contain personal data and are git-ignored:
 - URLs sanitized before opening in browser (http/https only)
 - Status colors: green=up, red=down, yellow=new host
 - Settings are editable in-app via `s` key and saved to config.json
+
+## Operations
+
+### Logging
+- Logs written to `logs/dashboard.log`
+- Uses `RotatingFileHandler` (10MB max, 5 backups)
+- Log level configurable via settings or `-v` flag
+
+### Signal Handling
+- SIGINT (Ctrl+C) and SIGTERM trigger graceful shutdown
+- Cleans up network scanner and saves state before exit
+
+### Release Process
+1. Update version in `dashboard/__init__.py`
+2. Update `CHANGELOG.md`
+3. Commit and tag: `git tag v0.x.x`
+4. Push with tags: `git push && git push --tags`
+5. GitHub Actions automatically publishes to PyPI
+6. Update Homebrew formula in `grego360/homebrew-tap`

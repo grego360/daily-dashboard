@@ -7,24 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2024-11-30
+
+### Changed
+
+- Default weather location changed from Berlin to London
+- Updated CLAUDE.md with installation, defaults, and operations docs
+
 ## [0.1.5] - 2024-11-30
 
 ### Changed
+
 - Improved startup message when no config file exists
 
 ## [0.1.4] - 2024-11-30
 
 ### Added
+
 - Default example feeds (Hacker News, BBC News, TechCrunch) for first-time users
 
 ## [0.1.3] - 2024-11-30
 
 ### Fixed
+
 - StatusBar UnboundLocalError when widgets not mounted on startup
 
 ## [0.1.2] - 2024-11-30
 
 ### Fixed
+
 - NewsPanel query race condition on startup with empty config
 - WeatherPanel query race condition on startup with empty config
 - NetworkPanel query race condition on startup with empty config
@@ -32,12 +43,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.1] - 2024-11-30
 
 ### Fixed
+
 - StatusBar query race condition on startup with empty config
 - Renamed app title from "Morning Dashboard" to "Daily Dashboard"
 
 ## [0.1.0] - 2024-11-30
 
 ### Added
+
 - Initial public release
 - MIT License
 - PyPI packaging with `pyproject.toml`
@@ -53,6 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Contributing guidelines
 
 ### Changed
+
 - Renamed from "Morning Dashboard" to "Daily Dashboard"
 - Updated logging to use RotatingFileHandler
 - Improved documentation
@@ -60,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-01-01
 
 ### Added
+
 - Terminal-based dashboard using Textual framework
 - News feed panel with RSS/JSON support
   - Tabbed interface for multiple feeds
@@ -96,12 +111,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Verbose logging mode
 
 ### Technical
+
 - Async/await throughout for non-blocking UI
 - Textual workers for background tasks
 - Rate limiting for feed requests
 - Graceful error handling and recovery
 
-[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/grego360/daily-dashboard/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/grego360/daily-dashboard/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/grego360/daily-dashboard/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/grego360/daily-dashboard/compare/v0.1.2...v0.1.3
