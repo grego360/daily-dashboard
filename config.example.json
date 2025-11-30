@@ -1,0 +1,89 @@
+{
+  "feeds": [
+    {
+      "name": "Hacker News",
+      "url": "https://hnrss.org/frontpage",
+      "type": "rss",
+      "enabled": true,
+      "json_path": null
+    },
+    {
+      "name": "Lobsters",
+      "url": "https://lobste.rs/rss",
+      "type": "rss",
+      "enabled": true,
+      "json_path": null
+    },
+    {
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com/feed/",
+      "type": "rss",
+      "enabled": false,
+      "json_path": null
+    }
+  ],
+  "links": [
+    {
+      "name": "Development",
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com",
+          "description": "Code hosting platform"
+        },
+        {
+          "name": "Stack Overflow",
+          "url": "https://stackoverflow.com",
+          "description": "Q&A for developers"
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "links": [
+        {
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com",
+          "description": "Tech news and discussions"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "links": []
+    }
+  ],
+  "network": {
+    "scanner": "scapy",
+    "targets": [
+      {
+        "name": "Local Network",
+        "range": "192.168.1.0/24",
+        "expected_hosts": [
+          "192.168.1.1"
+        ]
+      }
+    ],
+    "scan_interval_minutes": 15,
+    "dns_timeout_seconds": 1.0,
+    "arp_timeout_seconds": 3.0,
+    "nmap_options": {
+      "enabled": false,
+      "port_scan": false,
+      "service_detection": false,
+      "ports": "22,80,443,8080"
+    }
+  },
+  "weather": {
+    "enabled": true,
+    "location_name": "London",
+    "latitude": 51.5074,
+    "longitude": -0.1278
+  },
+  "settings": {
+    "user_name": "User",
+    "refresh_interval_minutes": 15,
+    "cache_ttl_minutes": 5,
+    "log_level": "INFO"
+  }
+}

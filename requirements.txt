@@ -1,0 +1,8 @@
+# Core dependencies - pinned for reproducible builds
+textual==6.7.0
+httpx==0.28.1
+feedparser==6.0.12
+pydantic==2.12.5
+rich==14.2.0
+scapy==2.6.1
+mac-vendor-lookup==0.1.15
