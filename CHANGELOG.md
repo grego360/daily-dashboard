@@ -7,8 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2024-11-30
+
+### Fixed
+- StatusBar query race condition on startup with empty config
+- Renamed app title from "Morning Dashboard" to "Daily Dashboard"
+
+## [0.1.0] - 2024-11-30
+
 ### Added
-- Initial public release preparation
+- Initial public release
 - MIT License
 - PyPI packaging with `pyproject.toml`
 - GitHub Actions CI/CD pipeline
@@ -71,5 +79,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rate limiting for feed requests
 - Graceful error handling and recovery
 
-[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/grego360/daily-dashboard/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/grego360/daily-dashboard/releases/tag/v0.1.0
