@@ -35,7 +35,7 @@ pip install daily-dashboard
 ### From Homebrew
 
 ```bash
-brew tap dropup-studio/tap
+brew tap grego360/tap
 brew install daily-dashboard
 ```
 
