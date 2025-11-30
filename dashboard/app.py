@@ -1407,7 +1407,11 @@ class DashboardApp(App):
         if not self.config or not self.feed_parser:
             return
 
-        news_panel = self.query_one(NewsPanel)
+        try:
+            news_panel = self.query_one(NewsPanel)
+        except Exception:
+            # NewsPanel may not be mounted yet on first load
+            return
 
         for feed_config in self.config.feeds:
             if not feed_config.enabled:
@@ -1451,7 +1455,11 @@ class DashboardApp(App):
         if not self.config or not self.weather_service:
             return
 
-        weather_panel = self.query_one(WeatherPanel)
+        try:
+            weather_panel = self.query_one(WeatherPanel)
+        except Exception:
+            # WeatherPanel may not be mounted yet on first load
+            return
 
         if not self.config.weather.enabled:
             weather_panel.set_empty("Weather disabled")
@@ -1486,7 +1494,11 @@ class DashboardApp(App):
         if not self.config or not self.network_scanner:
             return
 
-        network_panel = self.query_one(NetworkPanel)
+        try:
+            network_panel = self.query_one(NetworkPanel)
+        except Exception:
+            # NetworkPanel may not be mounted yet on first load
+            return
 
         # Check for scanner availability
         status_message = self.network_scanner.get_status_message()
