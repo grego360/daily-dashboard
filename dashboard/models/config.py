@@ -143,10 +143,19 @@ class Settings(BaseModel):
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = "INFO"
 
 
+def _default_feeds() -> list[FeedConfig]:
+    """Return default example feeds for first-time users."""
+    return [
+        FeedConfig(name="Hacker News", url="https://hnrss.org/frontpage", type="rss"),
+        FeedConfig(name="BBC News", url="https://feeds.bbci.co.uk/news/rss.xml", type="rss"),
+        FeedConfig(name="TechCrunch", url="https://techcrunch.com/feed/", type="rss"),
+    ]
+
+
 class Config(BaseModel):
     """Main configuration model."""
 
-    feeds: list[FeedConfig] = Field(default_factory=list)
+    feeds: list[FeedConfig] = Field(default_factory=_default_feeds)
     links: list[LinkCategory] = Field(default_factory=list)
     network: NetworkConfig = Field(default_factory=NetworkConfig)
     weather: WeatherConfig = Field(default_factory=WeatherConfig)
