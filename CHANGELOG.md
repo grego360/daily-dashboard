@@ -71,5 +71,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rate limiting for feed requests
 - Graceful error handling and recovery
 
-[Unreleased]: https://github.com/dropup-studio/daily-dashboard/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/dropup-studio/daily-dashboard/releases/tag/v0.1.0
+[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/grego360/daily-dashboard/releases/tag/v0.1.0

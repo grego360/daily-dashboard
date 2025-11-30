@@ -14,7 +14,7 @@ Thank you for your interest in contributing to Daily Dashboard! This document pr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/dropup-studio/daily-dashboard.git
+   git clone https://github.com/grego360/daily-dashboard.git
    cd daily-dashboard
    ```
 

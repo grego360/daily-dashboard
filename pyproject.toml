@@ -69,11 +69,11 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/dropup-studio/daily-dashboard"
-Documentation = "https://github.com/dropup-studio/daily-dashboard#readme"
-Repository = "https://github.com/dropup-studio/daily-dashboard.git"
-Issues = "https://github.com/dropup-studio/daily-dashboard/issues"
-Changelog = "https://github.com/dropup-studio/daily-dashboard/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/grego360/daily-dashboard"
+Documentation = "https://github.com/grego360/daily-dashboard#readme"
+Repository = "https://github.com/grego360/daily-dashboard.git"
+Issues = "https://github.com/grego360/daily-dashboard/issues"
+Changelog = "https://github.com/grego360/daily-dashboard/blob/main/CHANGELOG.md"
 
 [project.scripts]
 daily-dashboard = "dashboard.__main__:main"

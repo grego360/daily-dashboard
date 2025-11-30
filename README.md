@@ -1,13 +1,13 @@
 # Daily Dashboard
 
-[![CI](https://github.com/dropup-studio/daily-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/dropup-studio/daily-dashboard/actions/workflows/ci.yml)
+[![CI](https://github.com/grego360/daily-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/grego360/daily-dashboard/actions/workflows/ci.yml)
 [![PyPI version](https://badge.fury.io/py/daily-dashboard.svg)](https://badge.fury.io/py/daily-dashboard)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A terminal-based dashboard (TUI) built with Python's Textual framework. Displays news feeds from RSS/JSON sources, weather information, saved links, and performs network scanning using scapy's ARP-based discovery.
 
-![Daily Dashboard Screenshot](https://raw.githubusercontent.com/dropup-studio/daily-dashboard/main/docs/screenshot.png)
+![Daily Dashboard Screenshot](https://raw.githubusercontent.com/grego360/daily-dashboard/main/docs/screenshot.png)
 
 ## Features
 
@@ -42,7 +42,7 @@ brew install daily-dashboard
 ### From Source
 
 ```bash
-git clone https://github.com/dropup-studio/daily-dashboard.git
+git clone https://github.com/grego360/daily-dashboard.git
 cd daily-dashboard
 pip install -e .
 ```
@@ -53,7 +53,7 @@ pip install -e .
 
    ```bash
    # Copy the example configuration
-   curl -o config.json https://raw.githubusercontent.com/dropup-studio/daily-dashboard/main/config.example.json
+   curl -o config.json https://raw.githubusercontent.com/grego360/daily-dashboard/main/config.example.json
    ```
 
 2. **Edit the configuration** to add your feeds, location, and network targets
@@ -266,7 +266,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Author
 
-Costel Grigoras ([@dropup-studio](https://github.com/dropup-studio))
+Costel Grigoras ([@grego360](https://github.com/grego360))
 
 ## Acknowledgments
 
