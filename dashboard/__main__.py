@@ -123,9 +123,8 @@ def main() -> None:
     # Check if config exists
     if not args.config.exists():
         print(f"Config file not found: {args.config}")
-        print("\nCreate a config.json file with your feed URLs and network targets.")
-        print("See config.example.json for the configuration format.")
-        print("\nStarting with default (empty) configuration...")
+        print("\nStarting with default configuration (example feeds included)...")
+        print("Create a config.json file to customize. See config.example.json for format.")
 
     # Run the app
     _app = DashboardApp(config_path=args.config)
