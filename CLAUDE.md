@@ -173,9 +173,36 @@ These files contain personal data and are git-ignored:
 - Cleans up network scanner and saves state before exit
 
 ### Release Process
-1. Update version in `dashboard/__init__.py`
-2. Update `CHANGELOG.md`
-3. Commit and tag: `git tag v0.x.x`
-4. Push with tags: `git push && git push --tags`
-5. GitHub Actions automatically publishes to PyPI
-6. Update Homebrew formula in `grego360/homebrew-tap`
+
+1. **Update version** in `dashboard/__init__.py`:
+   ```python
+   __version__ = "0.x.x"
+   ```
+
+2. **Update CHANGELOG.md** - add new version section with changes
+
+3. **Commit and tag**:
+   ```bash
+   git add -A
+   git commit -m "Release v0.x.x"
+   git tag v0.x.x
+   git push && git push --tags
+   ```
+
+4. **Wait for PyPI** - GitHub Actions automatically publishes (~30 seconds)
+
+5. **Update Homebrew formula** in `grego360/homebrew-tap`:
+   ```bash
+   # Get new URL and SHA256 from PyPI
+   curl -sL "https://pypi.org/pypi/daily-dashboard/0.x.x/json" | \
+     python3 -c "import json,sys; d=json.load(sys.stdin); \
+     urls=[u for u in d['urls'] if u['filename'].endswith('.tar.gz')]; \
+     print('URL:', urls[0]['url']); print('SHA:', urls[0]['digests']['sha256'])"
+
+   # Edit Formula/daily-dashboard.rb:
+   # - Update `url` with new PyPI URL
+   # - Update `sha256` with new hash
+   # - Update version in `pip install daily-dashboard==0.x.x`
+
+   git commit -am "Update daily-dashboard to 0.x.x" && git push
+   ```
