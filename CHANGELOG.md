@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2024-11-30
+
+### Fixed
+- StatusBar UnboundLocalError when widgets not mounted on startup
+
 ## [0.1.2] - 2024-11-30
 
 ### Fixed
@@ -86,7 +91,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rate limiting for feed requests
 - Graceful error handling and recovery
 
-[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/grego360/daily-dashboard/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/grego360/daily-dashboard/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/grego360/daily-dashboard/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/grego360/daily-dashboard/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/grego360/daily-dashboard/releases/tag/v0.1.0

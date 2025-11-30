@@ -1379,6 +1379,7 @@ class DashboardApp(App):
 
     async def _initial_load(self) -> None:
         """Load all data on startup."""
+        status_bar = None
         try:
             status_bar = self.query_one(StatusBar)
             status_bar.set_activity("Loading...")
@@ -1393,14 +1394,15 @@ class DashboardApp(App):
             self._run_network_scan(),
         )
 
-        status_bar.set_last_refresh()
-        status_bar.clear_activity()
+        if status_bar:
+            status_bar.set_last_refresh()
+            status_bar.clear_activity()
 
-        # Update next refresh countdown if auto-refresh is enabled
-        if self.config and self.config.settings.refresh_interval_minutes > 0:
-            status_bar.set_next_refresh(
-                interval_minutes=self.config.settings.refresh_interval_minutes
-            )
+            # Update next refresh countdown if auto-refresh is enabled
+            if self.config and self.config.settings.refresh_interval_minutes > 0:
+                status_bar.set_next_refresh(
+                    interval_minutes=self.config.settings.refresh_interval_minutes
+                )
 
     async def _load_all_feeds(self) -> None:
         """Load all configured feeds."""
