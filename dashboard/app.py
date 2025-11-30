@@ -1,4 +1,4 @@
-"""Main Textual application for the Morning Dashboard."""
+"""Main Textual application for Daily Dashboard."""
 
 import asyncio
 import json
@@ -1225,9 +1225,9 @@ class SettingsScreen(ModalScreen[bool]):
 
 
 class DashboardApp(App):
-    """Morning Dashboard TUI Application."""
+    """Daily Dashboard TUI Application."""
 
-    TITLE = "Morning Dashboard"
+    TITLE = "Daily Dashboard"
     CSS = """
     Screen {
         layout: grid;
@@ -1379,8 +1379,12 @@ class DashboardApp(App):
 
     async def _initial_load(self) -> None:
         """Load all data on startup."""
-        status_bar = self.query_one(StatusBar)
-        status_bar.set_activity("Loading...")
+        try:
+            status_bar = self.query_one(StatusBar)
+            status_bar.set_activity("Loading...")
+        except Exception:
+            # StatusBar may not be mounted yet on first load
+            pass
 
         # Load feeds, weather, and scan network in parallel
         await asyncio.gather(
